@@ -1,0 +1,30 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2025-11-13 02:12:11 --> 404 Page Not Found: Assets/img
+ERROR - 2025-11-13 08:16:48 --> 404 Page Not Found: Assets/img
+ERROR - 2025-11-13 08:16:49 --> 404 Page Not Found: Assets/img
+ERROR - 2025-11-13 12:49:15 --> 404 Page Not Found: Css/support_parent.css
+ERROR - 2025-11-13 12:49:15 --> 404 Page Not Found: Js/twint_ch.js
+ERROR - 2025-11-13 12:49:16 --> 404 Page Not Found: Assets/img
+ERROR - 2025-11-13 12:49:16 --> 404 Page Not Found: Js/lkk_ch.js
+ERROR - 2025-11-13 13:49:07 --> 404 Page Not Found: Assets/img
+ERROR - 2025-11-13 13:49:18 --> 404 Page Not Found: Sign-uphtml/index
+ERROR - 2025-11-13 17:29:19 --> 404 Page Not Found: Js/index
+ERROR - 2025-11-13 18:57:51 --> 404 Page Not Found: Assets/img
+ERROR - 2025-11-13 23:09:05 --> 404 Page Not Found: Wp-includes/wlwmanifest.xml
+ERROR - 2025-11-13 23:09:05 --> 404 Page Not Found: Xmlrpcphp/index
+ERROR - 2025-11-13 23:09:06 --> 404 Page Not Found: Blog/wp-includes
+ERROR - 2025-11-13 23:09:06 --> 404 Page Not Found: Web/wp-includes
+ERROR - 2025-11-13 23:09:06 --> 404 Page Not Found: Wordpress/wp-includes
+ERROR - 2025-11-13 23:09:06 --> 404 Page Not Found: Website/wp-includes
+ERROR - 2025-11-13 23:09:06 --> 404 Page Not Found: Wp/wp-includes
+ERROR - 2025-11-13 23:09:06 --> 404 Page Not Found: News/wp-includes
+ERROR - 2025-11-13 23:09:06 --> 404 Page Not Found: 2020/wp-includes
+ERROR - 2025-11-13 23:09:07 --> 404 Page Not Found: 2019/wp-includes
+ERROR - 2025-11-13 23:09:07 --> 404 Page Not Found: Shop/wp-includes
+ERROR - 2025-11-13 23:09:07 --> 404 Page Not Found: Wp1/wp-includes
+ERROR - 2025-11-13 23:09:07 --> 404 Page Not Found: Test/wp-includes
+ERROR - 2025-11-13 23:09:07 --> 404 Page Not Found: Wp2/wp-includes
+ERROR - 2025-11-13 23:09:07 --> 404 Page Not Found: Site/wp-includes
+ERROR - 2025-11-13 23:09:07 --> 404 Page Not Found: Cms/wp-includes
+ERROR - 2025-11-13 23:09:07 --> 404 Page Not Found: Sito/wp-includes

@@ -1,0 +1,32 @@
+[05-May-2025 15:30:12 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function base_url() in /home2/esoarac2/public_html/splv.com.ng/index.php:127
+Stack trace:
+#0 {main}
+  thrown in /home2/esoarac2/public_html/splv.com.ng/index.php on line 127
+[05-May-2025 15:30:13 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function base_url() in /home2/esoarac2/public_html/splv.com.ng/index.php:127
+Stack trace:
+#0 {main}
+  thrown in /home2/esoarac2/public_html/splv.com.ng/index.php on line 127
+[05-May-2025 15:30:41 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function base_url() in /home2/esoarac2/public_html/splv.com.ng/index.php:127
+Stack trace:
+#0 {main}
+  thrown in /home2/esoarac2/public_html/splv.com.ng/index.php on line 127
+[05-May-2025 15:30:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function base_url() in /home2/esoarac2/public_html/splv.com.ng/index.php:127
+Stack trace:
+#0 {main}
+  thrown in /home2/esoarac2/public_html/splv.com.ng/index.php on line 127
+[05-May-2025 15:31:29 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function base_url() in /home2/esoarac2/public_html/splv.com.ng/index.php:127
+Stack trace:
+#0 {main}
+  thrown in /home2/esoarac2/public_html/splv.com.ng/index.php on line 127
+[05-May-2025 15:31:30 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function base_url() in /home2/esoarac2/public_html/splv.com.ng/index.php:127
+Stack trace:
+#0 {main}
+  thrown in /home2/esoarac2/public_html/splv.com.ng/index.php on line 127
+[05-May-2025 15:31:31 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function base_url() in /home2/esoarac2/public_html/splv.com.ng/index.php:127
+Stack trace:
+#0 {main}
+  thrown in /home2/esoarac2/public_html/splv.com.ng/index.php on line 127
+[05-May-2025 15:31:32 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function base_url() in /home2/esoarac2/public_html/splv.com.ng/index.php:127
+Stack trace:
+#0 {main}
+  thrown in /home2/esoarac2/public_html/splv.com.ng/index.php on line 127
