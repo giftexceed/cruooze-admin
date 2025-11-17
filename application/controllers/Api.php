@@ -1466,9 +1466,102 @@ public function fcmpayload($title,$message,$token,$iconurl)
         echo json_encode($response);
         exit;
  }
- public function adstype_GET()
+ public function createNewOrder_POST()
  {
-      $getCategories =  $this->db->get_where('adstype', array('status' => 1));
+  $udetails = $this->authentication();
+      $input = @file_get_contents("php://input");
+    $body = json_decode($input);
+    $requiredField = "";
+     $delivery_date= (isset($body->date)) ? $body->date : "";
+    $delivery_time= (isset($body->time)) ? $body->time : "";
+    
+    $siteLocation= (isset($body->siteLocation)) ? $body->siteLocation : "";
+    $siteContact= (isset($body->siteContact)) ? $body->siteContact : "";
+    $siteContactPhone= (isset($body->siteContactPhone)) ? $body->siteContactPhone : "";
+    $uploadInvoice= (isset($body->uploadInvoice)) ? $body->uploadInvoice : "";
+    $note= (isset($body->note)) ? $body->note : "";
+    $category= (isset($body->category)) ? $body->category : "";
+    $subcategories= (isset($body->subcategories)) ? $body->subcategories : "";
+
+    if($date == ""){$requiredField ="Date Is Required"; }
+    if($time == ""){$requiredField ="Time Is Required"; }
+
+    if($siteLocation == ""){$requiredField ="Location Is Required"; }
+    if($siteContact == ""){$requiredField ="Contact Is Required"; }
+    if($siteContactPhone == ""){$requiredField ="Contact Phone Is Required"; }
+    
+    if($category == ""){$requiredField ="Category Is Required"; }
+    if($subcategories == ""){$requiredField ="Sub Category Is Required"; }
+
+    if(isset($_FILES['uploadInvoice']) && !empty($_FILES['uploadInvoice']['name']))
+    {
+        $uploadpath = 'uploads/invoices/';
+        if (!is_dir($uploadpath)) {
+            mkdir($uploadpath, 0777, true);
+        }
+        $config['upload_path'] = $uploadpath;
+        $config['allowed_types'] = 'jpg|jpeg|png|pdf|doc|docx';
+        $config['max_size'] = 2048;
+        $this->load->library('upload', $config);
+        if (!$this->upload->do_upload('uploadInvoice')) {
+            $error = $this->upload->display_errors();
+            header('HTTP/1.0 400 File Upload Error');
+            $response['status']="fail";
+            $response['msg'] = $error;
+            echo json_encode($response);
+            exit;
+        } else {
+            $fileData = $this->upload->data();
+            $uploadInvoice = base_url($uploadpath . $fileData['file_name']);
+        }
+    }
+    $reference = $this->uniqueidwithlenght(8);
+    if($requiredField != ""){
+        header('HTTP/1.0 400 Parameters Required');
+        $response['status']="fail";
+        $response['msg'] = $requiredField;
+        echo json_encode($response);
+        exit;
+     }
+     
+     $data['user_id'] = $udetails['accountid'];
+     $data['delivery_date'] = $delivery_date;
+     $data['delivery_time'] = $delivery_time;
+     $data['siteLocation'] = $siteLocation;
+     $data['siteContact'] = $siteContact;
+     $data['siteContactPhone'] = $siteContactPhone;
+     $data['category'] = $category;
+     $data['subcategories'] = $subcategories;
+     $data['reference'] = $reference;
+     //$data['siteContactPhone'] = $delivery_time;
+     $data['created_at'] = date('Y-m-d H:i:s');
+     $this->db->insert('allorder',$data);
+     
+      header('HTTP/1.0 200 OK');
+        $response['status']="success";
+        $response['msg'] = 'Request submitted successfully';
+        echo json_encode($response);
+        exit;
+ }
+ public function getSubcategory_GET()
+ {
+  $category_id = $_GET['category_id'];
+      $getCategories =  $this->db->get_where('subcategory', array('category_id' => $category_id));
+     $postData = array();
+     foreach($getCategories->result_array() as $list)
+         {
+             $postData[] = $list;
+         }
+   
+    header('HTTP/1.0 200 OK');
+        $response['status']="success";
+        $response['data'] = $postData;
+        echo json_encode($response);
+        exit;
+ }
+ public function getcategory_GET()
+ {
+      $getCategories =  $this->db->get_where('category', array('status' => 1));
      $postData = array();
      foreach($getCategories->result_array() as $list)
          {
@@ -1753,7 +1846,7 @@ $auth = $factory->createAuth(); // Use createAuth() to get the Auth instance
     $body = json_decode($input);
     $requiredField = "";
     $name= (isset($body->name)) ? $body->name : "";
-    $email= (isset($body->email)) ? $body->email : "";
+    $email= (isset($body->emailAddress)) ? $body->emailAddress : "";
     $password= (isset($body->password)) ? $body->password : "";
     if($name == ""){$requiredField ="Fullname Is Required"; }
     if($email == ""){$requiredField ="Email Is Required"; }
@@ -1898,7 +1991,7 @@ public function loginData($userid,$metadata)
     $input = @file_get_contents("php://input");
     $body = json_decode($input);
     $requiredField = "";
-    $username= (isset($body->username)) ? $body->username : "";
+    $username= (isset($body->emailAddress)) ? $body->emailAddress : "";
     $password= (isset($body->password)) ? $body->password : "";
     $metadata= (isset($body->metadata)) ? $body->metadata : "";
     if($username == ""){$requiredField ="Email Is Required"; }

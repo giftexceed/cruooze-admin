@@ -329,7 +329,7 @@ public function updateadstype()
 {
      if ($this->session->userdata('super_admin_session') == true) {
     $id = $this->escapeString('id');
-    $details = $this->db->get_where('adstype',array('id'=>$id))->row_array();
+    $details = $this->db->get_where('category',array('id'=>$id))->row_array();
     if($details['status'] == '1')
     {
         $data['status'] = '0';
@@ -337,12 +337,12 @@ public function updateadstype()
         $data['status'] = '1';
     }
     $this->db->where('id',$id);
-    $this->db->update('adstype',$data);
+    $this->db->update('category',$data);
     $arr = array('message' => 'Record successfully updated', 'title' => 'Success');
     echo json_encode($arr);
 }else {
     $this->session->set_flashdata('error_message', 'Access denied. Please login again!');
-      redirect(adminController().'adstype');
+      redirect(adminController().'category');
   }  
 }
 public function addContactinfo()
@@ -401,10 +401,10 @@ public function editAdstype()
        $id = $this->escapeString('id');
         $data['type'] = $adstype;
         $this->db->where('id', $id);
-        $this->db->update('adstype', $data);
+        $this->db->update('category', $data);
         $this->session->set_flashdata('success_alert',('Item updated successfully'));
        
-    redirect(adminController().'adstype');
+    redirect(adminController().'category');
     }else {
     $this->session->set_flashdata('error_message', 'Access denied. Please login again!');
      redirect(adminController().'logout');
@@ -415,10 +415,10 @@ public function addAdstype()
     if ($this->session->userdata('super_admin_session') == true) {
        $adstype = $this->escapeString('adstype');
         $data['type'] = $adstype;
-        $this->db->insert('adstype', $data);
+        $this->db->insert('category', $data);
         $this->session->set_flashdata('success_alert',('Item added successfully'));
        
-    redirect(adminController().'adstype');
+    redirect(adminController().'category');
     }else {
     $this->session->set_flashdata('error_message', 'Access denied. Please login again!');
      redirect(adminController().'logout');
@@ -444,9 +444,9 @@ public function addSocial()
 public function deleteAdstype($id)
 {
     $this->db->where('id',$id);
-    $this->db->delete('adstype');
+    $this->db->delete('category');
      $this->session->set_flashdata('success_alert',('Item deleted successfully'));
-    redirect(adminController().'adstype');
+    redirect(adminController().'category');
 }
 
 public function contactinfo()
@@ -465,8 +465,8 @@ public function contactinfo()
 public function adstype()
 {
     if ($this->session->userdata('super_admin_session') == true) {
-        $page_data['page_name'] = "adstype";
-        $page_data['list'] = $this->db->get_where('adstype');
+        $page_data['page_name'] = "category";
+        $page_data['list'] = $this->db->get_where('category');
         $page_data['page_title'] = 'Events Categories';
          $this->load->view('backend/index', $page_data);;		
 }else {

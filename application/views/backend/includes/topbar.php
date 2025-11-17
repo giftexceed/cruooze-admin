@@ -21,7 +21,7 @@
                                             <div class="d-xxl-flex align-items-center bg-transparent border-0 text-start p-0 cursor dropdown-toggle" data-bs-toggle="dropdown">
                                                 <div class="flex-shrink-0 position-relative d-flex align-items-center info" style="margin:10px">
                                                     <img class="rounded-circle admin-img-width-for-mobile" style="width: 40px; height: 40px;" src="<?php echo base_url();?>assets/images/admin.png" alt="admin">
-                                              <h3 class="fw-medium fs-17 mb-0" style="padding:10px">Admin Smith</h3>
+                                              <h3 class="fw-medium fs-13 mb-0" style="padding:10px">Admin Smith</h3>
                                                </div>
                                             </div>
     
